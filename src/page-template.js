@@ -1,0 +1,15 @@
+
+
+
+
+
+generateDescription
+generateTableOfContents
+generateInstallation
+generateUsage
+generateLicense
+generateContributing
+generateTests
+generateQuestions
+
+
