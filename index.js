@@ -1,39 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 //const { writeFile, copyFile } = require('./utils/generateMarkdown.js');
 //const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [ 
             //Project Title (title of readme)
-        {  
-            type: 'input',
-        name: 'name',
-        message: 'What is your name? (Required)',
-        validate: nameInput => {
-          if (nameInput) {
-            return true;
-          } else {
-            console.log('Please enter your name!');
-            return false;
-          }
-        }
-      },
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Enter your GitHub Username (required)',
-        validate: githubInput => {
-          if (githubInput) {
-            return true;
-          } else {
-            console.log('Please enter your GitHub name!');
-            return false;
-          }
-        }
-      },
-      {
+              {
             type: 'input',
             name: 'title',
             message: 'What is your project name? (Required)',
@@ -134,33 +109,61 @@ const questions = [
         return true;
       }
     }
+  },
+  {  
+    type: 'input',
+name: 'name',
+message: 'What is your name? (Required)',
+validate: nameInput => {
+  if (nameInput) {
+    return true;
+  } else {
+    console.log('Please enter your name!');
+    return false;
   }
+}
+},
+{
+type: 'input',
+name: 'github',
+message: 'Enter your GitHub Username (required)',
+validate: githubInput => {
+  if (githubInput) {
+    return true;
+  } else {
+    console.log('Please enter your GitHub name!');
+    return false;
+  }
+}
+},
+{
+  type: 'input',
+  name: 'email',
+  message: 'Enter your email address. (required)',
+  validate: githubInput => {
+    if (githubInput) {
+      return true;
+    } else {
+      console.log('Please enter your GitHub name!');
+      return false;
+    }
+  }
+  },
 ];
-
-//const promptUser
-
-
 // TODO: Create a function to write README file
-const writeFile = data => {
-    return new Promise ((resolve, reject) => {
-        fs.writeFile('./dist/READ-ME.md', data, err => {
-            if (err){
-                reject(err);
-                return
-            }
-            });
+const writeFile = (fileName, data) => {
+    fs.writeFile(fileName, data, function(err) {
+        err ? console.log(err) : console.log("README.md has been created");
     })
 }
-
-
 // TODO: Create a function to initialize app
 const promptUser = () => {
-    return inquirer.prompt(questions)
-   // .then((userInput) => {
-
-  //  })
+    inquirer.prompt(questions)
+   .then(function(data){
+       writeFile("./dist/README.md", generateMarkdown(data))
+   }) 
     };
 
 // Function call to initialize app
 //init();
-promptUser();
+promptUser()
