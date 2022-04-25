@@ -1,18 +1,44 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
-//const questions = [];
-//Project:
+const fs = require('fs');
+//const { writeFile, copyFile } = require('./utils/generateMarkdown.js');
+//const generateMarkdown = require('./utils/generateMarkdown.js');
 
-const promptProject = () => { 
-    return inquirer.prompt([
-        //Project Title (title of readme)
+// TODO: Create an array of questions for user input
+const questions = [ 
+            //Project Title (title of readme)
         {  
             type: 'input',
-            name: 'projectTitle',
+        name: 'name',
+        message: 'What is your name? (Required)',
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('Please enter your name!');
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Enter your GitHub Username (required)',
+        validate: githubInput => {
+          if (githubInput) {
+            return true;
+          } else {
+            console.log('Please enter your GitHub name!');
+            return false;
+          }
+        }
+      },
+      {
+            type: 'input',
+            name: 'title',
             message: 'What is your project name? (Required)',
-            validate: projectTitle => {
-              if (projectTitle) {
+            validate: titleInput => {
+              if (titleInput) {
                 return true;
               } else {
                 console.log('Please enter your project title!');
@@ -23,13 +49,13 @@ const promptProject = () => {
  //description
  {  
     type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
+    name: 'description',
+    message: 'Describe your project. (Required)',
+    validate: descriptionInput => {
+      if (descriptionInput) {
         return true;
       } else {
-        console.log('Please enter your project title!');
+        console.log('Please enter your project description!');
         return false;
       }
     }
@@ -37,13 +63,13 @@ const promptProject = () => {
 //installation instructions
 {  
     type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
+    name: 'installation',
+    message: 'What are the installation instructions? (Required)',
+    validate: installationInput => {
+      if (installationInput) {
         return true;
       } else {
-        console.log('Please enter your project title!');
+        console.log('Please enter the installation instructions!');
         return false;
       }
     }
@@ -51,13 +77,13 @@ const promptProject = () => {
 //usage instructions
 {  
     type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
+    name: 'usage',
+    message: 'How is your project used? (Required)',
+    validate: usageInput => {
+      if (usageInput) {
         return true;
       } else {
-        console.log('Please enter your project title!');
+        console.log('Please describe how your project is used!');
         return false;
       }
     }
@@ -65,13 +91,13 @@ const promptProject = () => {
 //  contribution guidelines
 {  
     type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
+    name: 'contribution',
+    message: 'What are the Contribution Guidelines for your project? (Required)',
+    validate: contributionInput => {
+      if (contributionInput) {
         return true;
       } else {
-        console.log('Please enter your project title!');
+        console.log('Please provide Contribution Guidelines!');
         return false;
       }
     }
@@ -79,41 +105,62 @@ const promptProject = () => {
 //test instructions
 {  
     type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
+    name: 'test',
+    message: 'How can this project be tested? (Required)',
+    validate: testInput => {
+      if (testInput) {
         return true;
       } else {
-        console.log('Please enter your project title!');
+        console.log('Please provide Testing Instructions!');
         return false;
       }
     }
   },
 // license (list of options)
 {  
-    type: 'input',
-    name: 'projectTitle',
-    message: 'What is your project name? (Required)',
-    validate: projectTitle => {
-      if (projectTitle) {
-        return true;
+    type: 'checkbox',
+    name: 'license',
+    message: 'What licensing does your project have? (Required)',
+    choices: [
+        'one',
+        'two',
+        'three',
+        'four',
+        ],
+    validate: licenseInput => {
+      if (licenseInput.length < 1) {
+        return 'Please choose one';
       } else {
-        console.log('Please enter your project title!');
-        return false;
+        return true;
       }
     }
   }
-]);
-};
-const promptUser
+];
+
+//const promptUser
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeFile = data => {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile('./dist/READ-ME.md', data, err => {
+            if (err){
+                reject(err);
+                return
+            }
+            });
+    })
+}
+
 
 // TODO: Create a function to initialize app
-function init() {}
+const promptUser = () => {
+    return inquirer.prompt(questions)
+   // .then((userInput) => {
+
+  //  })
+    };
 
 // Function call to initialize app
-init();
+//init();
+promptUser();
