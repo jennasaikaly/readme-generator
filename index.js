@@ -97,19 +97,22 @@ const questions = [
     name: 'license',
     message: 'What licensing does your project have? (Required)',
     choices: [
-        'one',
-        'two',
-        'three',
-        'four',
+        'No License',
+        'mit',
+        'apache-2.0',
+        'gpl-2.0',
+        'gpl-3.0',
+        'isc',
         ],
     validate: licenseInput => {
       if (licenseInput.length < 1) {
         return 'Please choose one';
       } else {
-        return true;
+       return true;
       }
     }
   },
+
   {  
     type: 'input',
 name: 'name',
