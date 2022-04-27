@@ -5,16 +5,16 @@ function renderLicenseBadge(license) {
    if (license == 'No License'){
     return '';
   }
-  return `![badge](https://img.shields.io/badge/license-${license}-blue)`;
+  return `![badge](https://img.shields.io/badge/License-${license}-blue)`;
 };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-   if (license == 'No Licence'){
-   return ``;
+  if (license == 'No License'){
+    return '';
   }
-  return `[${license}](https://choosealicense.com/licenses/${license})`;
+  return `* [License](#license)`;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -24,16 +24,7 @@ if (license == 'No License'){
   return ``;
   }
   return `## License
- This project is covered under the ${renderLicenseLink(license)} license.`;
-}
-
-//create a function that adds the license section to the table of contents.
-//if there is no license, return an empty string
-function renderLicenseTOC(license){
-  if (license == 'No License'){
-    return '';
-  }
-  return `* [License](#license)`;
+ This application is covered under the ${license} license.`;
 }
 
 
@@ -54,7 +45,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
-  ${renderLicenseTOC(data.license)} 
+  ${renderLicenseLink(data.license)} 
   
   ## Installation
 
@@ -71,8 +62,11 @@ function generateMarkdown(data) {
   ## Tests
 
   ${data.test}
-
   ${renderLicenseSection(data.license)}
+  ## Questions
+  ${data.name}
+  <a href="https://www.github.com/${data.github}" target="_blank">My Github</a>
+  [Contact Us](mailto:${data.email})
 `;
 }
 
