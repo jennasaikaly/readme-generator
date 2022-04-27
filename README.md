@@ -3,7 +3,7 @@
 
   ## Description
 
-  This is a project for Module 9 where we are tasked with creating a Professional README Generator using Node.JS and Inquirer
+  This is a project for Module 9 where we are tasked with creating a Professional README Generator using Node.JS and Inquirer.
 
   
 
