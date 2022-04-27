@@ -37,6 +37,7 @@ function generateMarkdown(data) {
   ## Description
 
   ${data.description}
+
   ${renderLicenseBadge(data.license)}
 
   ## Table of Contents 
@@ -64,9 +65,11 @@ function generateMarkdown(data) {
   ${data.test}
   ${renderLicenseSection(data.license)}
   ## Questions
-  ${data.name}
-  <a href="https://www.github.com/${data.github}" target="_blank">My Github</a>
-  [Contact Us](mailto:${data.email})
+
+  Please contact me with any questions that you might have!<br/>
+  Github: <a href="https://www.github.com/${data.github}" target="_blank">jennasaikaly</a><br/>
+  Email: [jen.saikaly@gmail.com](mailto:${data.email})<br/>
+  Created by: ${data.name} &copy; ${new Date().getFullYear()}
 `;
 }
 

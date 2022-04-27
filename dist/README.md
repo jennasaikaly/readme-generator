@@ -1,10 +1,11 @@
 
-  # Readme Generator  
+  # Professional README Generator  
 
   ## Description
 
-  For this project, we have created a readme generator using Node.js and Inquier
-  ![badge](https://img.shields.io/badge/License-Apache(2.0)-blue)
+  This is a project for Module 9 where we are tasked with creating a Professional README Generator using Node.JS and Inquirer
+
+  
 
   ## Table of Contents 
 
@@ -12,26 +13,27 @@
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
-  * [License](#license) 
+   
   
   ## Installation
 
-  To install, the user needs to clone the repo and use 'npm install' to download the app dependencies into the node_modules folder
+  To install the application, the user must clone the repo and then use 'npm install' to download the dependencies into the node_modules folder.
 
   ## Usage 
 
-  Once the application has been installed, the user can use 'node index' to run the app.  They will be prompted to fill out questions related to the project. When they are done, the readme file will be created in the 'dist' folder
+  Once the application has been installed, the user can run the app from the command line using 'node index' or 'node index.js'.  They will then be prompted to answer a series of quesions pertaining to their project.  Once they have completed the questions, the README file will be generated in the 'dist'folder.
 
   ## Contributing
 
-  There are no contribution guidelines for this project
+  This project is not accepting contributors.
 
   ## Tests
 
-  The user can fill this out
-  ## License
- This application is covered under the Apache(2.0) license.
+  There is no testing for this project.
+  
   ## Questions
-  Jenna Saikaly
-  <a href="https://www.github.com/jennasaikaly" target="_blank">My Github</a>
-  [Contact Us](mailto:jen.saikaly@gmail.com)
+
+  Please contact me with any questions that you might have!<br/>
+  Github: <a href="https://www.github.com/jennasaikaly" target="_blank">jennasaikaly</a><br/>
+  Email: [jen.saikaly@gmail.com](mailto:jen.saikaly@gmail.com)<br/>
+  Created by: Jenna Saikaly &copy; 2022
