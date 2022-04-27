@@ -31,11 +31,11 @@
   
   1)  Run the application by typing 'node index' or 'node index.js' in the command line: 
   
-    ![image](https://user-images.githubusercontent.com/99379999/165583044-2873e48b-613b-4f11-b792-dc5a1e14893c.png)
+   ![image](https://user-images.githubusercontent.com/99379999/165583044-2873e48b-613b-4f11-b792-dc5a1e14893c.png)
     
   2)  You will be prompted to answer questions pertaining to your project:
   
-     ![image](https://user-images.githubusercontent.com/99379999/165583354-6d414a96-1625-4a2f-af86-d392cf576c23.png)
+  ![image](https://user-images.githubusercontent.com/99379999/165583354-6d414a96-1625-4a2f-af86-d392cf576c23.png)
   
   3)  Once you have completed all of the questions, you will be advised that that README file has been created and can now see the file in the 'dist' folder:  
   
@@ -43,7 +43,7 @@
   
   4) An example of the markdown and preview in VSCode:
   
-    ![image](https://user-images.githubusercontent.com/99379999/165582851-a7fcf166-d221-4d1d-be1f-a54e7f68a1ad.png)
+   ![image](https://user-images.githubusercontent.com/99379999/165582851-a7fcf166-d221-4d1d-be1f-a54e7f68a1ad.png)
 
   ## Questions
 
