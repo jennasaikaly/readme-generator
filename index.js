@@ -146,7 +146,7 @@ validate: githubInput => {
     if (emailInput) {
       return true;
     } else {
-      console.log('Please enter your GitHub name!');
+      console.log('Please enter your email address!');
       return false;
     }
   }
