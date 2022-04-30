@@ -142,8 +142,8 @@ validate: githubInput => {
   type: 'input',
   name: 'email',
   message: 'Enter your email address. (required)',
-  validate: githubInput => {
-    if (githubInput) {
+  validate: emailInput => {
+    if (emailInput) {
       return true;
     } else {
       console.log('Please enter your GitHub name!');
