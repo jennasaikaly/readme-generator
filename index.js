@@ -66,13 +66,13 @@ const questions = [
 //  contribution guidelines
 {  
     type: 'input',
-    name: 'contribution',
-    message: 'What are the Contribution Guidelines for your project? (Required)',
-    validate: contributionInput => {
-      if (contributionInput) {
+    name: 'link',
+    message: 'What is the URL for the deployed site?',
+    validate: linkInput => {
+      if (linkInput) {
         return true;
       } else {
-        console.log('Please provide Contribution Guidelines!');
+        console.log('Please provide a URL');
         return false;
       }
     }
@@ -80,13 +80,13 @@ const questions = [
 //test instructions
 {  
     type: 'input',
-    name: 'test',
-    message: 'How can this project be tested? (Required)',
-    validate: testInput => {
-      if (testInput) {
+    name: 'screenshot',
+    message: 'Do you have a screenshot for the site?',
+    validate: screenshotInput => {
+      if (screenshotInput) {
         return true;
       } else {
-        console.log('Please provide Testing Instructions!');
+        console.log('Please provide a screenshot');
         return false;
       }
     }
